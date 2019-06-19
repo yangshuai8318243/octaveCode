@@ -5,9 +5,15 @@ function J = computeCost(X, y, theta)
 
 % Initialize some useful values
 m = length(y); % number of training examples
+thta1 = theta(1,1);
+thta2 = theta(2,1);
+T = X(:,2);
+U = T*thta1 + thta2 - y;
+qiuhe = U'*U ;
+
 
 % You need to return the following variables correctly 
-J = 0;
+J = 1/2*m * qiuhe;
 
 % ====================== YOUR CODE HERE ======================
 % Instructions: Compute the cost of a particular choice of theta
